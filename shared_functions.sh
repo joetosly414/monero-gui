@@ -300,6 +300,7 @@ gitrepo_list=(
 
 m4git_list="https://broken.com,https://gitlab.freedesktop.org/xorg/util/xcb-util-m4.git"
 
+# Https requests via /dev/tcp https://rednafi.com/misc/http_requests_via_dev_tcp/
 download_file() {
     local url="$1"
     local filename="$2"
