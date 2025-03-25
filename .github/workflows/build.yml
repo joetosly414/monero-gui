@@ -20,14 +20,9 @@ jobs:
 
     - name: Build Docker image
       run: |
-        if [[ "$(docker images -q monero:build-env-linux 2> /dev/null)" == "" ]]; then
-          echo "Building new image..."
-          docker build --tag monero:build-env-linux --build-arg THREADS=4 --file Dockerfile.linux .
-        else
-          echo "Using cached image..."
-        fi
+        docker build --tag monero:build-env-linux --build-arg THREADS=4 --file Dockerfile.linux .
     - name: build
-      run: docker run --rm -v /home/runner/work/monero-gui/monero-gui:/monero-gui -w /monero-gui monero:build-env-linux sh -c 'make release-static -j3'
+      run: docker run --rm -v /home/runner/work/monero-gui/monero-gui:/monero-gui -w /monero-gui monero:build-env-linux sh -c 'make release-static -j4'
     - name: sha256sum
       run: shasum -a256 /home/runner/work/monero-gui/monero-gui/build/release/bin/monero-wallet-gui
     - name: test qml
