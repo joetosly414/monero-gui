@@ -251,9 +251,9 @@ debs_downloader_linux=(
     "pool/main/libg/libglvnd/libglvnd-dev_1.0.0-2ubuntu2.3_amd64.deb" "libglvnd-dev_1.0.0-2ubuntu2.3_amd64.deb" "47a685b272f9dd4e3f129fd580bed63e"
     "pool/main/m/mesa/libgl1-mesa-dev_20.0.8-0ubuntu1~18.04.1_amd64.deb" "libgl1-mesa-dev_20.0.8-0ubuntu1~18.04.1_amd64.deb" "0b49b7c8c057a58d76044a3bf3aa6af6"
 )
-
+# "pool/main/g/glibc/libc6_2.31-0ubuntu9.17_amd64.deb" "libc6_2.31-0ubuntu9.17_amd64.deb" "e00b41b0b63ad22b7b4d16152b3981ff"
+# when an upgrade for an existing package is done, that requires other deps to be updated, my method for getting list of debs breaks
 debs_downloader_windows=(
-    "pool/main/g/glibc/libc6_2.31-0ubuntu9.17_amd64.deb" "libc6_2.31-0ubuntu9.17_amd64.deb" "e00b41b0b63ad22b7b4d16152b3981ff"
     "pool/main/libl/liblocale-gettext-perl/liblocale-gettext-perl_1.07-4_amd64.deb" "liblocale-gettext-perl_1.07-4_amd64.deb" "a3c93d7b5801fddbcf92e6d13f52348c"
     "pool/main/p/perl/perl-modules-5.30_5.30.0-9ubuntu0.5_all.deb" "perl-modules-5.30_5.30.0-9ubuntu0.5_all.deb" "efddaa7eaff10ca8c21609a5dfd657c8"
     "pool/main/g/gdbm/libgdbm6_1.18.1-5_amd64.deb" "libgdbm6_1.18.1-5_amd64.deb" "74e431e53bb27c57a47d3a0be27c3f0c"
