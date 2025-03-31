@@ -201,3 +201,53 @@ jobs:
       with:
         name: ${{ env.OUTPUT }}
         path: /home/runner/work/monero-gui/monero-gui/${{ env.OUTPUT }}
+
+  docker-linux-static-pinned:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: recursive
+    - name: install dependencies
+      run: sudo apt -y install xvfb libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xkb1 libxcb-shape0 libxkbcommon-x11-0
+    - name: free up diskspace
+      run: ${{env.FREE_DISKSPACE}}
+    - name: sanity
+      run: ls -la
+    - name: prepare build environment
+      run: docker build --tag monero:build-env-linux-pinned --build-arg THREADS=4 --file Dockerfile.linux.pinned .
+    - name: build
+      run: docker run --rm -v /home/runner/work/monero-gui/monero-gui:/monero-gui -w /monero-gui monero:build-env-linux-pinned sh -c 'make release-static -j4'
+    - name: sha256sum
+      run: shasum -a256 /home/runner/work/monero-gui/monero-gui/build/release/bin/monero-wallet-gui
+    - name: test qml
+      run: xvfb-run -a /home/runner/work/monero-gui/monero-gui/build/release/bin/monero-wallet-gui --test-qml
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.job }}
+        path: |
+          /home/runner/work/monero-gui/monero-gui/build/release/bin/monero-wallet-gui
+          /home/runner/work/monero-gui/monero-gui/build/release/bin/monerod
+
+  docker-windows-static-pinned:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: recursive
+    - name: free up diskspace
+      run: ${{env.FREE_DISKSPACE}}
+    - name: sanity
+      run: ls -la
+    - name: prepare build environment
+      run: docker build --tag monero:build-env-windows-pinned --build-arg THREADS=4 --file Dockerfile.windows.pinned .
+    - name: build
+      run: docker run --rm -v /home/runner/work/monero-gui/monero-gui:/monero-gui -w /monero-gui monero:build-env-windows-pinned sh -c 'make depends root=/depends target=x86_64-w64-mingw32 tag=win-x64 -j4'
+    - name: sha256sum
+      run: shasum -a256 /home/runner/work/monero-gui/monero-gui/build/x86_64-w64-mingw32/release/bin/monero-wallet-gui.exe
+    - uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.job }}
+        path: |
+          /home/runner/work/monero-gui/monero-gui/build/x86_64-w64-mingw32/release/bin/monero-wallet-gui.exe
+          /home/runner/work/monero-gui/monero-gui/build/x86_64-w64-mingw32/release/bin/monerod.exe
