@@ -542,7 +542,7 @@ download_file() {
             # Remove HTTP headers from the response
             sed '1,/^\r$/d' "$filename.tmp" > "$filename"
             rm "$filename.tmp"
-            if echo "$expected_hash $filename" | md5sum -c; then
+            if check_md5sum "$filename" "$expected_md5"; then
                 echo "File integrity verified"
                 return 0
             else
@@ -558,6 +558,19 @@ download_file() {
     [ -f "$filename.tmp" ] && rm "$filename.tmp"
     echo "::notice::Failed to download $filename from $url"
     return 1
+}
+
+# only called from one place,
+check_md5sum() {
+    local filename="$1"
+    local expected_md5="$2"
+    local calculated_md5=$(md5sum "$filename" | cut -d' ' -f1)
+    if [ "$calculated_md5" = "$expected_md5" ]; then
+        return 0
+    else
+        echo "::notice::Hash mismatch for ${filename} expected: ${expected_md5} got: ${calculated_md5}"
+        return 1
+    fi
 }
 
 download_from_mirrors() {
