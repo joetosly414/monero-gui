@@ -131,14 +131,6 @@ RUN wget https://github.com/libexpat/libexpat/releases/download/R_2_4_8/expat-2.
     make -j$THREADS install && \
     rm -rf $(pwd)
 
-RUN git clone -b 2.13.92 --depth 1 https://gitlab.freedesktop.org/fontconfig/fontconfig && \
-    cd fontconfig && \
-    git reset --hard b1df1101a643ae16cdfa1d83b939de2497b1bf27 && \
-    ./autogen.sh --disable-shared --enable-static --sysconfdir=/etc --localstatedir=/var && \
-    make -j$THREADS && \
-    make -j$THREADS install && \
-    rm -rf $(pwd)
-
 RUN git clone -b release-64-2 --depth 1 https://github.com/unicode-org/icu && \
     cd icu/icu4c/source && \
     git reset --hard e2d85306162d3a0691b070b4f0a73e4012433444 && \
@@ -193,12 +185,10 @@ RUN rm /usr/lib/x86_64-linux-gnu/libX11.a && \
     git clone git://code.qt.io/qt/qttranslations.git -b ${QT_VERSION} --depth 1 && \
     git clone git://code.qt.io/qt/qtx11extras.git -b ${QT_VERSION} --depth 1 && \
     git clone git://code.qt.io/qt/qtxmlpatterns.git -b ${QT_VERSION} --depth 1 && \
-    sed -ri s/\(Libs:.*\)/\\1\ -lexpat/ /usr/local/lib/pkgconfig/fontconfig.pc && \
-    sed -ri s/\(Libs:.*\)/\\1\ -lz/ /usr/local/lib/pkgconfig/freetype2.pc && \
     sed -ri s/\(Libs:.*\)/\\1\ -lXau/ /usr/local/lib/pkgconfig/xcb.pc && \
     sed -i s/\\/usr\\/X11R6\\/lib64/\\/usr\\/local\\/lib/ qtbase/mkspecs/linux-g++-64/qmake.conf && \
     ./configure --prefix=/usr -platform linux-g++-64 -opensource -confirm-license -release -static -no-avx \
-    -opengl dynamic -qpa xcb -xcb -xcb-xlib -feature-xlib -qt-freetype -fontconfig -glib \
+    -opengl dynamic -qpa xcb -xcb -xcb-xlib -feature-xlib -qt-freetype -glib \
     -no-dbus -no-feature-qml-worker-script -no-linuxfb -no-openssl -no-sql-sqlite -no-kms -no-use-gold-linker \
     -qt-harfbuzz -qt-libjpeg -qt-libpng -qt-pcre -qt-zlib \
     -skip qt3d -skip qtandroidextras -skip qtcanvas3d -skip qtcharts -skip qtconnectivity -skip qtdatavis3d \
