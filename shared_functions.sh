@@ -252,7 +252,7 @@ debs_downloader_linux=(
     "pool/main/m/mesa/libgl1-mesa-dev_20.0.8-0ubuntu1~18.04.1_amd64.deb" "libgl1-mesa-dev_20.0.8-0ubuntu1~18.04.1_amd64.deb" "0b49b7c8c057a58d76044a3bf3aa6af6"
 )
 # "pool/main/g/glibc/libc6_2.31-0ubuntu9.17_amd64.deb" "libc6_2.31-0ubuntu9.17_amd64.deb" "e00b41b0b63ad22b7b4d16152b3981ff"
-debs_downloader_windows1=(
+debs_downloader_windows=(
     "pool/main/g/glibc/libc6_2.35-0ubuntu3.9_amd64.deb" "libc6_2.35-0ubuntu3.9_amd64.deb" "a1e21d989e2483d631fbf2d690406cd7"
     "pool/main/libl/liblocale-gettext-perl/liblocale-gettext-perl_1.07-4build3_amd64.deb" "liblocale-gettext-perl_1.07-4build3_amd64.deb" "6f9582968c99086578835c013c9a60c6"
     "pool/main/p/perl/perl-modules-5.34_5.34.0-3ubuntu1.3_all.deb" "perl-modules-5.34_5.34.0-3ubuntu1.3_all.deb" "2703b87c055890fdd135f1a54ccc8885"
