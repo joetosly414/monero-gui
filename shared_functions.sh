@@ -254,6 +254,13 @@ debs_downloader_linux=(
 # "pool/main/g/glibc/libc6_2.31-0ubuntu9.17_amd64.deb" "libc6_2.31-0ubuntu9.17_amd64.deb" "e00b41b0b63ad22b7b4d16152b3981ff"
 # when an upgrade for an existing package is done, that requires other deps to be updated, my method for getting list of debs breaks
 debs_downloader_windows=(
+    "pool/main/g/glibc/libc6_2.31-0ubuntu9.17_amd64.deb" "libc6_2.31-0ubuntu9.17_amd64.deb" "e00b41b0b63ad22b7b4d16152b3981ff"
+    "pool/main/m/manpages/manpages_5.05-1_all.deb" "manpages_5.05-1_all.deb" "9badbbbcfcf566fb19e398e288f49fb7"
+    "pool/main/g/glibc/libc-dev-bin_2.31-0ubuntu9.17_amd64.deb" "libc-dev-bin_2.31-0ubuntu9.17_amd64.deb" "91da654b353a5656dc4634a4c6e1194a"
+    "pool/main/l/linux/linux-libc-dev_5.4.0-212.232_amd64.deb" "linux-libc-dev_5.4.0-212.232_amd64.deb" "7f1f6a3609c7574973b961c60a55b912"
+    "pool/main/libx/libxcrypt/libcrypt-dev_4.4.10-10ubuntu4_amd64.deb" "libcrypt-dev_1%3a4.4.10-10ubuntu4_amd64.deb" "8793f32f562b4fa2bd57f51de6a1a74e"
+    "pool/main/g/glibc/libc6-dev_2.31-0ubuntu9.17_amd64.deb" "libc6-dev_2.31-0ubuntu9.17_amd64.deb" "950a4c7a09e286dd1eba452f21102b66"
+    "pool/main/m/manpages/manpages-dev_5.05-1_all.deb" "manpages-dev_5.05-1_all.deb" "892c4b0ed0cafec57526d2b88e667a69"
     "pool/main/libl/liblocale-gettext-perl/liblocale-gettext-perl_1.07-4_amd64.deb" "liblocale-gettext-perl_1.07-4_amd64.deb" "a3c93d7b5801fddbcf92e6d13f52348c"
     "pool/main/p/perl/perl-modules-5.30_5.30.0-9ubuntu0.5_all.deb" "perl-modules-5.30_5.30.0-9ubuntu0.5_all.deb" "efddaa7eaff10ca8c21609a5dfd657c8"
     "pool/main/g/gdbm/libgdbm6_1.18.1-5_amd64.deb" "libgdbm6_1.18.1-5_amd64.deb" "74e431e53bb27c57a47d3a0be27c3f0c"
