@@ -700,8 +700,9 @@ dpkg_ordered() {
     for ((i = 0; i < ${#tuplet[@]}; i+=3)); do
         deb_file="${tuplet[i+1]}" # The second item (filename)
         echo "Installing $deb_file"
-        dpkg -i "$deb_file"
+        dpkg --unpack "$deb_file"
     done
+    dpkg --configure -a
 }
 
 get_debs_downloader() {
