@@ -251,7 +251,7 @@ debs_downloader_linux=(
     "pool/main/libg/libglvnd/libglvnd-dev_1.0.0-2ubuntu2.3_amd64.deb" "libglvnd-dev_1.0.0-2ubuntu2.3_amd64.deb" "47a685b272f9dd4e3f129fd580bed63e"
     "pool/main/m/mesa/libgl1-mesa-dev_20.0.8-0ubuntu1~18.04.1_amd64.deb" "libgl1-mesa-dev_20.0.8-0ubuntu1~18.04.1_amd64.deb" "0b49b7c8c057a58d76044a3bf3aa6af6"
 )
-# "pool/main/g/glibc/libc6_2.31-0ubuntu9.17_amd64.deb" "libc6_2.31-0ubuntu9.17_amd64.deb" "e00b41b0b63ad22b7b4d16152b3981ff"
+
 debs_downloader_windows=(
     "pool/main/g/glibc/libc6_2.35-0ubuntu3.9_amd64.deb" "libc6_2.35-0ubuntu3.9_amd64.deb" "a1e21d989e2483d631fbf2d690406cd7"
     "pool/main/libl/liblocale-gettext-perl/liblocale-gettext-perl_1.07-4build3_amd64.deb" "liblocale-gettext-perl_1.07-4build3_amd64.deb" "6f9582968c99086578835c013c9a60c6"
@@ -351,6 +351,7 @@ debs_downloader_windows=(
     "pool/main/m/mpclib3/libmpc3_1.2.1-2build1_amd64.deb" "libmpc3_1.2.1-2build1_amd64.deb" "8022dd730341cdc9842ec8e9175cdb46"
     "pool/main/g/gcc-11/cpp-11_11.4.0-1ubuntu1%7e22.04_amd64.deb" "cpp-11_11.4.0-1ubuntu1~22.04_amd64.deb" "7d5d40957d5a3fe92ff59074b0dc82e6"
     "pool/main/g/gcc-defaults/cpp_11.2.0-1ubuntu1_amd64.deb" "cpp_4%3a11.2.0-1ubuntu1_amd64.deb" "491b7d4127354574e6ca9751492115d9"
+    "pool/main/c/curl/curl_7.81.0-1ubuntu1.20_amd64.deb" "curl_7.81.0-1ubuntu1.20_amd64.deb" "fa3987fa75e333d931f51bd448d5b730"
     "pool/main/f/fonts-dejavu/fonts-dejavu-core_2.37-2build1_all.deb" "fonts-dejavu-core_2.37-2build1_all.deb" "613b49540f3ffdc7dcda4ddc96f35323"
     "pool/main/f/fontconfig/fontconfig-config_2.13.1-4.2ubuntu5_all.deb" "fontconfig-config_2.13.1-4.2ubuntu5_all.deb" "cb0642b846aa8a3a65a75c854ca043b7"
     "pool/universe/b/binutils-mingw-w64/binutils-mingw-w64-i686_2.38-3ubuntu1%2b9build1_amd64.deb" "binutils-mingw-w64-i686_2.38-3ubuntu1+9build1_amd64.deb" "4255570e29b65be92993880949771704"
@@ -507,8 +508,6 @@ debs_downloader_windows=(
     "pool/main/libg/libglvnd/libglvnd-dev_1.4.0-1_amd64.deb" "libglvnd-dev_1.4.0-1_amd64.deb" "ba23d6271804a44cb243fdec078b3b28"
     "pool/main/m/mesa/libgl1-mesa-dev_23.2.1-1ubuntu3.1%7e22.04.3_amd64.deb" "libgl1-mesa-dev_23.2.1-1ubuntu3.1~22.04.3_amd64.deb" "e8e22818da0dab68f6da1f550c247882"
 )
-
-
 #git ca-certificates
 debs_gitcloner=(
     "pool/main/p/perl/perl-modules-5.26_5.26.1-6ubuntu0.7_all.deb" "perl-modules-5.26_5.26.1-6ubuntu0.7_all.deb" "467eaf069e805e58448f2cc55f181a45"
