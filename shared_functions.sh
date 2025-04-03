@@ -898,6 +898,8 @@ build_all_linux(){
 }
 
 build_all_windows(){
+    ls -la
+    ls -la /depends
     build_and_install monero "
         cp -a contrib/depends / &&
         cd .. &&
