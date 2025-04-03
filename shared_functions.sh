@@ -899,12 +899,10 @@ build_all_linux(){
 
 build_all_windows(){
     ls -la
+    # we're only building copying and building the depends folder
+    cp -a monero/contrib/depends /
     ls -la /depends
-    build_and_install monero "
-        cp -a contrib/depends / &&
-        cd .. &&
-        rm -rf monero
-        make -j$THREADS -C /depends HOST=x86_64-w64-mingw32 NO_QT=1" "" ""
+    make -j$THREADS -C /depends HOST=x86_64-w64-mingw32 NO_QT=1
     
     update-alternatives --set x86_64-w64-mingw32-g++ $(which x86_64-w64-mingw32-g++-posix)
     update-alternatives --set x86_64-w64-mingw32-gcc $(which x86_64-w64-mingw32-gcc-posix)
